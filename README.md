@@ -1,5 +1,7 @@
 [Link to Section 1](#section-1)
 [Link to Section 2](#section-2)
+[Link to buyerIssue()](#buyerIssue())
+
 
 ## PropTypes
 
