@@ -1,4 +1,4 @@
--[test](###buyerIssue())
+-[test](###-buyerIssue())
 
 ## PropTypes
 
