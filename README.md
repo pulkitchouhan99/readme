@@ -1,4 +1,5 @@
--[test](###-buyerIssue())
+[Link to Section 1](#section-1)
+[Link to Section 2](#section-2)
 
 ## PropTypes
 
@@ -103,6 +104,14 @@ Each object within the `context` array should have the following properties:
 | `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
 | `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
 | `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+
+## Section 1
+This is the content of Section 1.
+
+## Section 2
+This is the content of Section 2.
+
+
 
 # Usage
 
