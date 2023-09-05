@@ -33,7 +33,7 @@ npm install igm-service-package
 
 ## PropTypes
 
-### `init()`
+#### `init()`
 
 | Property         | Type              | Default                     | Description                       |
 | ---------------- | ----------------- | --------------------------- | --------------------------------- |
@@ -61,7 +61,7 @@ Each object within the `context` array should have the following properties:
 | `ttl`                      | String | Time to live for the context.                     |
 | `subscriberState`          | String | The state where the subscriber is located.        |
 
-### `buyerIssue()`
+#### `buyerIssue()`
 
 | Property    | Type              | Default | Description                                           |
 | ----------- | ----------------- | ------- | ----------------------------------------------------- |
@@ -70,7 +70,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess` | Callback Function | N/A     | Handling the Success Responses.                       |
 | `onError`   | Callback Function | N/A     | Handling the Error Responses.                         |
 
-### `buyerIssueStatus()`
+#### `buyerIssueStatus()`
 
 | Property       | Type              | Default | Description                          |
 | -------------- | ----------------- | ------- | ------------------------------------ |
@@ -79,7 +79,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess`    | Callback Function | N/A     | Handling the Success Responses.      |
 | `onError`      | Callback Function | N/A     | Handling the Error Responses.        |
 
-### `sellerOnIssue()`
+#### `sellerOnIssue()`
 
 | Property    | Type              | Default | Description                          |
 | ----------- | ----------------- | ------- | ------------------------------------ |
@@ -88,7 +88,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess` | Callback Function | N/A     | Handling the Success Responses.      |
 | `onError`   | Callback Function | N/A     | Handling the Error Responses.        |
 
-### `sellerOnIssueStatus()`
+#### `sellerOnIssueStatus()`
 
 | Property          | Type              | Default | Description                             |
 | ----------------- | ----------------- | ------- | --------------------------------------- |
@@ -97,7 +97,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess`       | Callback Function | N/A     | Handling the Success Responses.         |
 | `onError`         | Callback Function | N/A     | Handling the Error Responses.           |
 
-### `issueSellerToLogisitics()`
+#### `issueSellerToLogisitics()`
 
 | Property    | Type              | Default | Description                                                      |
 | ----------- | ----------------- | ------- | ---------------------------------------------------------------- |
@@ -106,7 +106,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess` | Callback Function | N/A     | Handling the Success Responses.                                  |
 | `onError`   | Callback Function | N/A     | Handling the Error Responses.                                    |
 
-### `issueStatusSellerToLogisitics()`
+#### `issueStatusSellerToLogisitics()`
 
 | Property       | Type              | Default | Description                                        |
 | -------------- | ----------------- | ------- | -------------------------------------------------- |
@@ -115,7 +115,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess`    | Callback Function | N/A     | Handling the Success Responses.                    |
 | `onError`      | Callback Function | N/A     | Handling the Error Responses.                      |
 
-### `onIssueFromLogisitics()`
+#### `onIssueFromLogisitics()`
 
 | Property    | Type              | Default | Description                         |
 | ----------- | ----------------- | ------- | ----------------------------------- |
@@ -124,7 +124,7 @@ Each object within the `context` array should have the following properties:
 | `onSuccess` | Callback Function | N/A     | Handling the Success Responses.     |
 | `onError`   | Callback Function | N/A     | Handling the Error Responses.       |
 
-### `onIssueStatusFromLogistics()`
+#### `onIssueStatusFromLogistics()`
 
 | Property          | Type              | Default | Description                                |
 | ----------------- | ----------------- | ------- | ------------------------------------------ |
@@ -135,7 +135,7 @@ Each object within the `context` array should have the following properties:
 
 # Usage
 
-### For Buyer
+#### For Buyer
 
 ```javascript
 import { issue } from "ondc-igm-sdk";
@@ -274,7 +274,7 @@ bash
 }
 ```
 
-### sellerOnIssue({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### sellerOnIssue({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue to the `SellerManager`.
 - **Parameters**:
@@ -327,7 +327,7 @@ bash
 }
 ```
 
-### buyerIssueStatus({ issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### buyerIssueStatus({ issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a buyer's issue status to the `BuyerManager`.
 - **Parameters**:
@@ -358,7 +358,7 @@ bash
 }
 ```
 
-### sellerOnIssueStatus({ on_issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### sellerOnIssueStatus({ on_issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue status to the `SellerManager`.
 - **Parameters**:
@@ -472,7 +472,7 @@ bash
 }
 ```
 
-### issueSellerToLogisitics({ issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### issueSellerToLogisitics({ issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue to the logistics manager.
 - **Parameters**:
@@ -616,7 +616,7 @@ bash
 }
 ```
 
-### issueStatusSellerToLogisitics({ issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### issueStatusSellerToLogisitics({ issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue status to the logistics manager.
 - **Parameters**:
@@ -649,7 +649,7 @@ bash
 
 ```
 
-### onIssueFromLogisitics({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
+#### onIssueFromLogisitics({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of an on_issue to the logistics manager from a buyer perspective.
 - **Parameters**:
