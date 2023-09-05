@@ -1,171 +1,191 @@
--[Link to Section 1](#section-1)
--[Link to Section 2](#section-2)
--[Link to init()](#init)
--[Link to onIssueFromLogisitics()](#onIssueFromLogisitics)
+# IGM Service Package
 
+The Issue & Grievance Management (IGM) Service Package provides a mechanism for resolving issues between users of the ONDC network. The IGM flow is built on the Issue & Grievance Management framework, which facilitates the resolution of issues, grievances, and disputes between a Complainant and Respondent while ensuring transparency, fairness, and data security.
+
+- [Introduction](#Introduction)
+- [Features](#Features)
+- [Installation](#Installation)
+- [PropTypes](#PropTypes)
+- [init](#init)
+- [buyerIssue](#buyerIssue)
+- [buyerIssueStatus](#buyerIssueStatus)
+
+## Introduction
+
+The IGM Service Package is designed to handle various interactions related to issue management, resolution, and status tracking within the ONDC network. It allows participants to raise, process, and track issues involving transactions, logistics services, and other identified entities.
+
+## Features
+
+- Issue creation and management for different network participants (Complainant, Respondent, Buyer, Seller, Logistics Service Provider, etc.).
+- Issue resolution tracking and reporting.
+- Event callbacks for handling success, error, and other custom actions.
+- Modular structure for easy extensibility and customization.
+
+## Installation
+
+You can install the IGM Service Package using npm:
+
+```
+bash
+npm install igm-service-package
+
+```
 
 ## PropTypes
 
 ### `init()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `validateSchema` | Boolean              | N/A                       | To stop schema validation.             |
-| `npType`         | Array                | BUYER, SELLER, LOGISTICS | Type of the Network Participants.     |
-| `context`        | Array of Objects     | N/A                       | Subscriber Detail.                     |
-| `Domain`         | Array of Strings     | RETAIL, MOBILITY, LOGISTICS | Subscriber Domain Type.             |
-| `onSuccess`      | Callback Function    | N/A                       | Handling the Success Responses.        |
-| `onError`        | Callback Function    | N/A                       | Handling the Error Responses.          |
+| Property         | Type              | Default                     | Description                       |
+| ---------------- | ----------------- | --------------------------- | --------------------------------- |
+| `validateSchema` | Boolean           | N/A                         | To stop schema validation.        |
+| `npType`         | Array             | BUYER, SELLER, LOGISTICS    | Type of the Network Participants. |
+| `context`        | Array of Objects  | N/A                         | Subscriber Detail.                |
+| `Domain`         | Array of Strings  | RETAIL, MOBILITY, LOGISTICS | Subscriber Domain Type.           |
+| `onSuccess`      | Callback Function | N/A                         | Handling the Success Responses.   |
+| `onError`        | Callback Function | N/A                         | Handling the Error Responses.     |
 
 **`context`**: An array of objects containing subscriber details.
 
 Each object within the `context` array should have the following properties:
 
-| Property                  | Type     | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `subscriberId`            | String   | A unique identifier for the subscriber.         |
-| `subscriberType`          | String   | The type of the subscriber (e.g., BUYER, SELLER).|
-| `subscriberURL`           | String   | The URL of the subscriber.                      |
-| `expected_resolution_time`| String   | The expected resolution time.                   |
-| `expected_response_time`  | String   | The expected response time.                     |
-| `subscriberCity`          | String   | The city where the subscriber is located.       |
-| `subscriberCountry`       | String   | The country where the subscriber is located.    |
-| `subscriberDomain`        | String   | The domain of the subscriber.                   |
-| `ttl`                     | String   | Time to live for the context.                   |
-| `subscriberState`         | String   | The state where the subscriber is located.      |
-
+| Property                   | Type   | Description                                       |
+| -------------------------- | ------ | ------------------------------------------------- |
+| `subscriberId`             | String | A unique identifier for the subscriber.           |
+| `subscriberType`           | String | The type of the subscriber (e.g., BUYER, SELLER). |
+| `subscriberURL`            | String | The URL of the subscriber.                        |
+| `expected_resolution_time` | String | The expected resolution time.                     |
+| `expected_response_time`   | String | The expected response time.                       |
+| `subscriberCity`           | String | The city where the subscriber is located.         |
+| `subscriberCountry`        | String | The country where the subscriber is located.      |
+| `subscriberDomain`         | String | The domain of the subscriber.                     |
+| `ttl`                      | String | Time to live for the context.                     |
+| `subscriberState`          | String | The state where the subscriber is located.        |
 
 ### `buyerIssue()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `issue`        | Object               | N/A                       | The issue object to generate the issue to the seller.  
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.          |
+| Property    | Type              | Default | Description                                           |
+| ----------- | ----------------- | ------- | ----------------------------------------------------- |
+| `issue`     | Object            | N/A     | The issue object to generate the issue to the seller. |
+| `onNack`    | Callback Function | N/A     | Handling the Nack Responses                           |
+| `onSuccess` | Callback Function | N/A     | Handling the Success Responses.                       |
+| `onError`   | Callback Function | N/A     | Handling the Error Responses.                         |
 
 ### `buyerIssueStatus()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `issue_status`        | Object               | N/A                       | To get the issue status from seller.  
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.          |
-
+| Property       | Type              | Default | Description                          |
+| -------------- | ----------------- | ------- | ------------------------------------ |
+| `issue_status` | Object            | N/A     | To get the issue status from seller. |
+| `onNack`       | Callback Function | N/A     | Handling the Nack Responses.         |
+| `onSuccess`    | Callback Function | N/A     | Handling the Success Responses.      |
+| `onError`      | Callback Function | N/A     | Handling the Error Responses.        |
 
 ### `sellerOnIssue()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `on_issue`        | Object               | N/A                       | To get the on issue from the seller.  
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+| Property    | Type              | Default | Description                          |
+| ----------- | ----------------- | ------- | ------------------------------------ |
+| `on_issue`  | Object            | N/A     | To get the on issue from the seller. |
+| `onNack`    | Callback Function | N/A     | Handling the Nack Responses.         |
+| `onSuccess` | Callback Function | N/A     | Handling the Success Responses.      |
+| `onError`   | Callback Function | N/A     | Handling the Error Responses.        |
 
 ### `sellerOnIssueStatus()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `on_issue_status`        | Object               | N/A                       | To get the on issue status from seller.  
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+| Property          | Type              | Default | Description                             |
+| ----------------- | ----------------- | ------- | --------------------------------------- |
+| `on_issue_status` | Object            | N/A     | To get the on issue status from seller. |
+| `onNack`          | Callback Function | N/A     | Handling the Nack Responses.            |
+| `onSuccess`       | Callback Function | N/A     | Handling the Success Responses.         |
+| `onError`         | Callback Function | N/A     | Handling the Error Responses.           |
 
 ### `issueSellerToLogisitics()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `issue`        | Object               | N/A                       | The issue object to generate the issue from seller to logistics. 
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+| Property    | Type              | Default | Description                                                      |
+| ----------- | ----------------- | ------- | ---------------------------------------------------------------- |
+| `issue`     | Object            | N/A     | The issue object to generate the issue from seller to logistics. |
+| `onNack`    | Callback Function | N/A     | Handling the Nack Responses.                                     |
+| `onSuccess` | Callback Function | N/A     | Handling the Success Responses.                                  |
+| `onError`   | Callback Function | N/A     | Handling the Error Responses.                                    |
 
 ### `issueStatusSellerToLogisitics()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `issue_status`        | Object               | N/A                       | To send the issue status from seller to logistics. 
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+| Property       | Type              | Default | Description                                        |
+| -------------- | ----------------- | ------- | -------------------------------------------------- |
+| `issue_status` | Object            | N/A     | To send the issue status from seller to logistics. |
+| `onNack`       | Callback Function | N/A     | Handling the Nack Responses.                       |
+| `onSuccess`    | Callback Function | N/A     | Handling the Success Responses.                    |
+| `onError`      | Callback Function | N/A     | Handling the Error Responses.                      |
 
 ### `onIssueFromLogisitics()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `on_issue`        | Object               | N/A                       | To get the on issue from logistics. 
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
+| Property    | Type              | Default | Description                         |
+| ----------- | ----------------- | ------- | ----------------------------------- |
+| `on_issue`  | Object            | N/A     | To get the on issue from logistics. |
+| `onNack`    | Callback Function | N/A     | Handling the Nack Responses.        |
+| `onSuccess` | Callback Function | N/A     | Handling the Success Responses.     |
+| `onError`   | Callback Function | N/A     | Handling the Error Responses.       |
 
 ### `onIssueStatusFromLogistics()`
 
-| Property       | Type                 | Default                   | Description                            |
-|----------------|----------------------|---------------------------|----------------------------------------|
-| `on_issue_status`        | Object               | N/A                       | To get the on issue status from logistics. 
-| `onNack`       | Callback Function     | N/A                       | Handling the Nack Responses.                           |
-| `onSuccess`    | Callback Function     | N/A                       | Handling the Success Responses.        |
-| `onError`      | Callback Function     | N/A                       | Handling the Error Responses.         |
-
-## Section 1
-This is the content of Section 1.
-
-## Section 2
-This is the content of Section 2.
-
-
+| Property          | Type              | Default | Description                                |
+| ----------------- | ----------------- | ------- | ------------------------------------------ |
+| `on_issue_status` | Object            | N/A     | To get the on issue status from logistics. |
+| `onNack`          | Callback Function | N/A     | Handling the Nack Responses.               |
+| `onSuccess`       | Callback Function | N/A     | Handling the Success Responses.            |
+| `onError`         | Callback Function | N/A     | Handling the Error Responses.              |
 
 # Usage
 
-### For Buyer 
+### For Buyer
 
 ```javascript
-import { issue } from 'ondc-igm-sdk'
+import { issue } from "ondc-igm-sdk";
 
 issue.init({
   validateSchema: true,
-  npType: ['BUYER'],
+  npType: ["BUYER"],
   context: [
     {
-      subscriberId: '<example-subscriber-id>',
-      subscriberType: 'BUYER',
-      subscriberURL: '<example-subscriber-url>',
-      expected_resolution_time: 'rfrff',
-      expected_response_time: '3434343',
-      subscriberCity: 'IND',
-      subscriberCountry: '0378',
-      subscriberDomain: '<example-subscriber-domain>',
-      ttl: 'PH239',
-      subcriberState: '3434',
+      subscriberId: "<example-subscriber-id>",
+      subscriberType: "BUYER",
+      subscriberURL: "<example-subscriber-url>",
+      expected_resolution_time: "rfrff",
+      expected_response_time: "3434343",
+      subscriberCity: "IND",
+      subscriberCountry: "0378",
+      subscriberDomain: "<example-subscriber-domain>",
+      ttl: "PH239",
+      subcriberState: "3434",
     },
   ],
-  domain: ['RETAIL'],
+  domain: ["RETAIL"],
   onSuccess: {
-    on_issue: (value) => console.log('logging from on_issue callback', value),
-    on_issue_status: (value) => console.log('logging from on_issue_status callback', value),
+    on_issue: (value) => console.log("logging from on_issue callback", value),
+    on_issue_status: (value) =>
+      console.log("logging from on_issue_status callback", value),
   },
   onError: (error) => {
-    logger.info({ message: 'Here!', labels: { key: 'value' } })
-    logger.info('welp')
+    logger.info({ message: "Here!", labels: { key: "value" } });
+    logger.info("welp");
     // console.log(logger.transports);
-    console.log(error)
+    console.log(error);
   },
-})
+});
 ```
-
 
 #### buyerIssue({ issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a buyer's issue to the `BuyerManager`.
 - **Parameters**:
+
   - `issue`: The issue to be managed.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **Issue Schema**:
-```bash 
+
+```
+bash
 {
     "context": {
         "bpp_id": "<example-bpp_id>",
@@ -253,10 +273,12 @@ issue.init({
     }
 }
 ```
+
 ### sellerOnIssue({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue to the `SellerManager`.
 - **Parameters**:
+
   - `on_issue`: The issue data to be managed by the seller.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
@@ -264,7 +286,8 @@ issue.init({
 
 - **On_Issue Schema**:
 
-```bash
+```
+bash
    {
     "context": {
         "bap_id":"<example-bap_id>",
@@ -308,15 +331,18 @@ issue.init({
 
 - **Description**: This function delegates the management of a buyer's issue status to the `BuyerManager`.
 - **Parameters**:
+
   - `issue_status`: The issue status data to be managed.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **Issue_Status Schema**:
-```bash
+
+```
+bash
 {
-  "context": 
+  "context":
   {
     "bpp_id": "<example-bpp_id>",
     "bpp_uri": "<example-bpp_uri>",
@@ -325,7 +351,7 @@ issue.init({
     "timestamp": "2023-01-15T10:30:00.469Z",
     "ttl": "PT30S"
   },
-  "message": 
+  "message":
   {
     "issue_id": "I1"
   }
@@ -336,13 +362,16 @@ issue.init({
 
 - **Description**: This function delegates the management of a seller's issue status to the `SellerManager`.
 - **Parameters**:
+
   - `on_issue_status`: The issue status data to be managed by the seller.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **On_Issue_Status Seller Schema**:
-```bash
+
+```
+bash
 {
     "context": {
         "bap_id": "<example-bap_id>",
@@ -442,17 +471,21 @@ issue.init({
     }
 }
 ```
+
 ### issueSellerToLogisitics({ issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue to the logistics manager.
 - **Parameters**:
+
   - `issue`: The issue data to be managed by the logistics manager.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **Issue Seller to Logistics Schema**:
-```bash
+
+```
+bash
 {
     "context": {
         "domain":"0030433",
@@ -479,7 +512,7 @@ issue.init({
             "order_details": {
                 "id": "4597f703-e84f-431e-a96a-d147cfa142f9",
                 "state": "Completed",
-                
+
                 "items": [
                     {
                         "id": "18275-ONDC-1-9",
@@ -582,17 +615,21 @@ issue.init({
     }
 }
 ```
+
 ### issueStatusSellerToLogisitics({ issue_status, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of a seller's issue status to the logistics manager.
 - **Parameters**:
+
   - `issue_status`: The issue status data to be managed by the logistics manager.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **Issue_Status Seller To Logistics Schema**:
-```bash
+
+```
+bash
 {
     "context": {
         "domain": "0030433",
@@ -609,18 +646,23 @@ issue.init({
         "issue_id": "I1"
     }
 }
+
 ```
+
 ### onIssueFromLogisitics({ on_issue, onError, onNack, onSuccess }: RouteSpecificManagerProps)
 
 - **Description**: This function delegates the management of an on_issue to the logistics manager from a buyer perspective.
 - **Parameters**:
+
   - `on_issue`: The on_issue data to be managed.
   - `onError`: Callback for error handling.
   - `onNack`: Callback for handling when the operation is not acknowledged.
   - `onSuccess`: Callback for handling when the operation is successful.
 
 - **On_Issue Logistics Schema**:
-```bash
+
+```
+bash
 {
     "context": {
         "domain": "0030433",
