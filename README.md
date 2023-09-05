@@ -1,7 +1,7 @@
-[Link to Section 1](#section-1)
-[Link to Section 2](#section-2)
-[Link to init()](#init)
-[Link to onIssueFromLogisitics()](#onIssueFromLogisitics)
+-[Link to Section 1](#section-1)
+-[Link to Section 2](#section-2)
+-[Link to init()](#init)
+-[Link to onIssueFromLogisitics()](#onIssueFromLogisitics)
 
 
 ## PropTypes
