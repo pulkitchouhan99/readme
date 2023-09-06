@@ -184,7 +184,7 @@ issue.init({
 
 - **Issue Schema**:
 
-```JSON
+```bash
 {
     "context": {
         "bpp_id": "<example-bpp_id>",
@@ -285,8 +285,7 @@ issue.init({
 
 - **On_Issue Schema**:
 
-```
-bash
+```bash
    {
     "context": {
         "bap_id":"<example-bap_id>",
@@ -338,8 +337,7 @@ bash
 
 - **Issue_Status Schema**:
 
-```
-bash
+```bash
 {
   "context":
   {
@@ -369,8 +367,7 @@ bash
 
 - **On_Issue_Status Seller Schema**:
 
-```
-bash
+```bash
 {
     "context": {
         "bap_id": "<example-bap_id>",
@@ -483,8 +480,7 @@ bash
 
 - **Issue Seller to Logistics Schema**:
 
-```
-bash
+```bash
 {
     "context": {
         "domain":"0030433",
@@ -627,8 +623,7 @@ bash
 
 - **Issue_Status Seller To Logistics Schema**:
 
-```
-bash
+```bash
 {
     "context": {
         "domain": "0030433",
@@ -660,8 +655,7 @@ bash
 
 - **On_Issue Logistics Schema**:
 
-```
-bash
+```bash
 {
     "context": {
         "domain": "0030433",
