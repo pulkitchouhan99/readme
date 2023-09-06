@@ -184,7 +184,7 @@ issue.init({
 
 - **Issue Schema**:
 
-```javascript
+```JSON
 {
     "context": {
         "bpp_id": "<example-bpp_id>",
