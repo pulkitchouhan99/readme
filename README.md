@@ -184,8 +184,7 @@ issue.init({
 
 - **Issue Schema**:
 
-```
-bash
+```javascript
 {
     "context": {
         "bpp_id": "<example-bpp_id>",
